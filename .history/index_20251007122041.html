@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KeyCheckBox – Sicurezza per Ribalte Camion | Prevenzione incidenti carico scarico</title>
+  <meta name="description" content="KeyCheckBox è un sistema di sicurezza intelligente per ribalte camion. Previene partenze anticipate, migliora la sicurezza nel carico e scarico e ottimizza i processi logistici.">
+  <meta name="keywords" content="KeyCheckBox, sicurezza ribalta camion, dispositivo ribalta, sicurezza logistica, chiave sicurezza camion, partenza anticipata, carico e scarico, sicurezza magazzino, sistema controllo ribalta, key lock truck dock, ribalta automatica, sensore pedana, sicurezza logistica industriale">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="KeyCheckBox – Sicurezza alla ribalta. Sempre.">
+  <meta property="og:description" content="Previeni la partenza anticipata dei camion con KeyCheckBox, il sistema di sicurezza per ribalte di carico e scarico.">
+  <meta property="og:image" content="https://keycheckbox.it/assets/frontale_kcb.png">
+  <meta property="og:url" content="https://keycheckbox.it">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://keycheckbox.it/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Google Analytics / Search Console -->
+  <meta name="google-site-verification" content="INSERISCI_CODICE_VERIFICA_GOOGLE">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{--bg:#f6faf8;--card:#fff;--text:#0b1a11;--muted:#566e64;--brand:#12b347;--stroke:#dbe7e1;--max:1100px;--radius:16px}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;background:var(--bg);color:var(--text)}
+    a{color:#0a7f35;text-decoration:none}
+    header{position:sticky;top:0;z-index:50;background:#ffffffaa;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--stroke)}
+    .nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem}
+    .logo img{height:clamp(36px,7vw,110px)}
+    .menu{display:flex;gap:.8rem;align-items:center}
+    .menu a{color:var(--muted);padding:.5rem .6rem;border-radius:10px}
+    .menu a:hover{background:#eef6f1}
+    .btn{background:var(--brand);color:#fff;padding:.6rem .9rem;border-radius:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;transition:all .2s}
+    .btn:hover{background:#0a8f3f;transform:scale(1.02)}
+    .hamburger{display:none;background:transparent;border:none;font-size:1.6rem}
+    @media(max-width:900px){.menu{display:none;position:absolute;top:100%;right:1rem;background:#fff;border:1px solid var(--stroke);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.08);flex-direction:column;min-width:220px;padding:.6rem}.menu.show{display:flex}.hamburger{display:inline-block}.btn.primary{display:none}}
+    main{max-width:var(--max);margin:0 auto;padding:1rem 1rem 3rem}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;align-items:stretch;margin:1rem 0}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;grid-template-rows:auto auto}.video-box{margin-top:1rem}}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:1rem;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;border:1px solid var(--stroke);border-radius:999px;padding:.35rem .6rem;color:#566e64;background:#fff}
+    .leds{display:flex;gap:.6rem;margin:.4rem 0 1rem;align-items:center}
+    .led{width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 2px #fff inset,0 0 0 3px rgba(0,0,0,.04)}
+    .led.red{background:#ff3b30}.led.green{background:#12b347}
+    .video-box{overflow:hidden;display:flex;align-items:center;justify-content:center;border-radius:14px;border:1px solid var(--stroke)}
+    .video-box video{width:100%;height:100%;object-fit:cover;border-radius:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .img-box img{width:100%;max-height:280px;object-fit:contain;border-radius:14px;border:1px solid var(--stroke);background:#fff;padding:10px}
+    form{display:grid;gap:.7rem}
+    input,textarea{border:1px solid var(--stroke);border-radius:12px;padding:.7rem .8rem;width:100%}
+    button[type=submit]{background:#12b347;color:#fff;padding:.8rem 1rem;border:0;border-radius:12px;font-weight:700;cursor:pointer}
+    footer{border-top:1px solid var(--stroke);padding:1.4rem 1rem;margin-top:2rem}
+    .footer{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;color:#566e64}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="logo"><img src="assets/logo.svg" alt="KeyCheckBox logo sicurezza ribalta camion"></div>
+    <div class="spacer"></div>
+    <button class="hamburger" aria-label="Apri menù" onclick="document.querySelector('.menu').classList.toggle('show')">☰</button>
+    <div class="menu">
+      <a href="#problema">Problema</a><a href="#soluzione">Soluzione</a><a href="#benefici">Benefici</a><a href="#immagini">Immagini</a><a href="#contatti">Contatti</a>
+    </div>
+    <a class="btn primary" href="#contatti">Prenota demo</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="card">
+      <span class="pill">Sicurezza alla ribalta. Sempre.</span>
+      <h1>KeyCheckBox – Sistema di Sicurezza per Ribalta Camion</h1>
+      <p>Previeni la partenza anticipata dei camion durante le operazioni di carico e scarico. La soluzione intelligente per la sicurezza logistica.</p>
+      <div class="leds"><span class="led red"></span><span>ROSSO: operazioni in corso</span></div>
+      <div class="leds"><span class="led green"></span><span>VERDE: via libera controllato</span></div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <a class="btn" href="#contatti">Prenota una demo</a>
+        <a class="btn" style="background:#e6f2ec;color:#0b1a11;border:1px solid var(--stroke)" href="#immagini">Vedi immagini</a>
+      </div>
+    </div>
+    <div class="video-box"><video src="assets/camion in partenza.mp4" autoplay muted loop playsinline></video></div>
+  </section>
+
+  <section id="problema"><h2>Il problema</h2>
+    <p>Le partenze premature del camion durante le operazioni di carico e scarico sono tra le principali cause di incidenti e danni nelle aree logistiche.</p>
+    <ul><li>Rischio per operatori</li><li>Danni a merci e mezzi</li><li>Fermi e franchigie costose</li></ul>
+  </section>
+
+  <section id="soluzione"><h2>La soluzione: KeyCheckBox</h2>
+    <p>Un sistema di controllo integrato che segnala e coordina lo stato operativo della ribalta. Indica chiaramente quando è sicuro muovere il mezzo.</p>
+    <ul><li>Stato ribalta visibile (rosso/verde)</li><li>Facile da installare</li><li>Compatibile con sistemi esistenti</li></ul>
+  </section>
+
+  <section id="benefici"><h2>Benefici per l'azienda</h2>
+    <div class="grid">
+      <div class="card"><h3>Sicurezza</h3><p>Riduzione near-miss e infortuni, conformità alle norme.</p></div>
+      <div class="card"><h3>Semplicità</h3><p>Installazione rapida e uso intuitivo.</p></div>
+      <div class="card"><h3>Efficienza</h3><p>Meno fermi e danni, maggiore produttività.</p></div>
+    </div>
+  </section>
+
+  <section id="immagini"><h2>Immagini del progetto</h2>
+    <div class="grid">
+      <div class="img-box"><img src="assets/frontale_kcb.png" alt="Vista frontale KeyCheckBox ribalta camion"></div>
+      <div class="img-box"><img src="assets/struttura kcb.png" alt="Disegno tecnico KeyCheckBox ribalta camion"></div>
+    </div>
+  </section>
+
+  <section id="contatti" class="card" style="margin-top:1rem">
+    <h2>Prenota una demo</h2>
+    <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+      <input type="hidden" name="form-name" value="demo">
+      <p style="display:none"><label>Non compilare: <input name="bot-field"></label></p>
+      <label>Nome e cognome*<br><input name="nome" required></label>
+      <label>Email aziendale*<br><input type="email" name="email" required></label>
+      <label>Azienda*<br><input name="azienda" required></label>
+      <label>Messaggio<br><textarea name="messaggio" rows="4" placeholder="Descrivi la tua esigenza o sito pilota."></textarea></label>
+      <label><input type="checkbox" name="consenso" required> Acconsento al trattamento dei dati per essere ricontattato.</label>
+      <button type="submit">Invia richiesta</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="footer">
+    <div class="brand"><img src="assets/logo.svg" alt="Logo KeyCheckBox"></div>
+    <div>© 2025 KeyCheckBox – Sistema di sicurezza per ribalte camion. • <a href="privacy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^=\"#\"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    const el=document.getElementById(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+    document.querySelector('.menu')?.classList.remove('show');
+  });
+});
+</script>
+</body>
+</html>
+
+
