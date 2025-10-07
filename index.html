@@ -440,33 +440,16 @@
       <section id="contatti" class="form-grid">
         <div class="card">
           <h2>Prenota una demo</h2>
-          <form
-            name="demo"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/success"
-          >
+          <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
             <input type="hidden" name="form-name" value="demo" />
-            <p style="display: none">
+            <p style="display:none">
               <label>Non compilare: <input name="bot-field" /></label>
             </p>
-            <label>Nome e cognome*<br /><input name="nome" required /></label>
-            <label
-              >Email aziendale*<br /><input type="email" name="email" required
-            /></label>
-            <label>Azienda*<br /><input name="azienda" required /></label>
-            <label
-              >Messaggio<br /><textarea
-                name="messaggio"
-                rows="4"
-                placeholder="Descrivi la tua esigenza o sito pilota."
-              ></textarea>
-            </label>
-            <label
-              ><input type="checkbox" name="consenso" required /> Acconsento al
-              trattamento dei dati per essere ricontattato.</label
-            >
+            <label>Nome e cognome*<br><input name="nome" required></label>
+            <label>Email aziendale*<br><input type="email" name="email" required></label>
+            <label>Azienda*<br><input name="azienda" required></label>
+            <label>Messaggio<br><textarea name="messaggio" rows="4"></textarea></label>
+            <label><input type="checkbox" name="consenso" required> Acconsento al trattamento dei dati.</label>
             <button type="submit">Invia richiesta</button>
           </form>
         </div>
