@@ -440,25 +440,18 @@
       <section id="contatti" class="form-grid">
         <div class="card">
           <h2>Prenota una demo</h2>
-          <form action="https://formspree.io/f/mkgqvgdp" method="POST">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Messaggio:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <!-- Redireziona automaticamente a success.html -->
-            <input
-              type="hidden"
-              name="_next"
-              value="https://keycheckbox.it/success.html"
-            />
-
-            <button type="submit">Invia</button>
-          </form>
+          <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+        <input type="hidden" name="form-name" value="demo" />
+  <p style="display:none">
+    <label>Non compilare: <input name="bot-field" /></label>
+  </p>
+  <label>Nome e cognome*<br><input name="nome" required></label>
+  <label>Email aziendale*<br><input type="email" name="email" required></label>
+  <label>Azienda*<br><input name="azienda" required></label>
+  <label>Messaggio<br><textarea name="messaggio" rows="4"></textarea></label>
+  <label><input type="checkbox" name="consenso" required> Acconsento al trattamento dei dati.</label>
+  <button type="submit">Invia richiesta</button>
+</form>
         </div>
         <img
           src="assets/frontale_kcb.png"

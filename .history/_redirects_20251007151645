@@ -1,0 +1,8 @@
+# Gestione corretta delle pagine statiche e SPA
+/success   /success.html   200
+/*          /index.html    200
+
+# Reindirizzamenti HTTPS
+https://www.keycheckbox.it/*   https://keycheckbox.it/:splat   301!
+http://keycheckbox.it/*        https://keycheckbox.it/:splat   301!
+http://www.keycheckbox.it/*    https://keycheckbox.it/:splat   301!
