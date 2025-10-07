@@ -1,24 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Richiesta inviata – KeyCheckBox</title>
-  <meta name="description" content="La tua richiesta di demo KeyCheckBox è stata inviata con successo. Ti contatteremo al più presto.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <style>
-    body{margin:0;padding:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#f6faf8;font-family:system-ui;color:#0b1a11;text-align:center}
-    .card{background:#fff;padding:2rem;border-radius:16px;box-shadow:0 3px 15px rgba(0,0,0,.1);max-width:480px}
-    h1{color:#12b347}
-    a{display:inline-block;margin-top:1rem;padding:.8rem 1.4rem;background:#12b347;color:#fff;border-radius:12px;text-decoration:none;font-weight:700}
-    a:hover{background:#0a8f3f}
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>Richiesta inviata con successo ✅</h1>
-    <p>Grazie per averci contattato.<br>Il team <strong>KeyCheckBox</strong> ti ricontatterà al più presto per organizzare la tua demo.</p>
-    <a href="/">Torna alla Home</a>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Richiesta inviata – KeyCheckBox</title>
+    <meta
+      name="description"
+      content="Grazie per aver richiesto una demo KeyCheckBox. Ti ricontatteremo al più presto."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --bg: #f6faf8;
+        --card: #fff;
+        --text: #0b1a11;
+        --muted: #566e64;
+        --brand: #12b347;
+        --stroke: #dbe7e1;
+        --radius: 16px;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        padding: 2rem 2.5rem;
+        max-width: 480px;
+      }
+      img {
+        height: 90px;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        color: var(--brand);
+      }
+      p {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+      a.btn {
+        display: inline-block;
+        background: var(--brand);
+        color: #fff;
+        font-weight: 600;
+        padding: 0.8rem 1.4rem;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      a.btn:hover {
+        background: #0a8f3f;
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="assets/logo.svg" alt="Logo KeyCheckBox" />
+      <h1>Richiesta inviata con successo!</h1>
+      <p>
+        Grazie per aver richiesto una demo di KeyCheckBox.<br />
+        Ti contatteremo al più presto per pianificare un incontro.
+      </p>
+      <a class="btn" href="/">Torna alla Home</a>
+    </div>
+  </body>
 </html>
