@@ -53,248 +53,326 @@
     />
 
     <style>
-      :root {
-        --bg: #f6faf8;
-        --card: #fff;
-        --text: #0b1a11;
-        --muted: #566e64;
-        --brand: #12b347;
-        --stroke: #dbe7e1;
-        --max: 1100px;
-        --radius: 16px;
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-          "Helvetica Neue", Arial;
-        background: var(--bg);
-        color: var(--text);
-      }
-      a {
-        color: #0a7f35;
-        text-decoration: none;
-      }
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: #ffffffaa;
-        backdrop-filter: saturate(180%) blur(8px);
-        border-bottom: 1px solid var(--stroke);
-      }
-      .nav {
-        max-width: var(--max);
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 0.7rem 1rem;
-      }
-      .logo img {
-        height: clamp(36px, 7vw, 110px);
-      }
-      .menu {
-        display: flex;
-        gap: 0.8rem;
-        align-items: center;
-      }
-      .menu a {
-        color: var(--muted);
-        padding: 0.5rem 0.6rem;
-        border-radius: 10px;
-      }
-      .menu a:hover {
-        background: #eef6f1;
-      }
-      .btn {
-        background: var(--brand);
-        color: #fff;
-        padding: 0.6rem 0.9rem;
-        border-radius: 12px;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s;
-      }
-      .btn:hover {
-        background: #0a8f3f;
-        transform: scale(1.02);
-      }
-      .hamburger {
-        display: none;
-        background: transparent;
-        border: none;
-        font-size: 1.6rem;
-      }
-      @media (max-width: 900px) {
-        .menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          right: 1rem;
-          background: #fff;
-          border: 1px solid var(--stroke);
-          border-radius: 12px;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-          flex-direction: column;
-          min-width: 220px;
-          padding: 0.6rem;
-        }
-        .menu.show {
-          display: flex;
-        }
-        .hamburger {
-          display: inline-block;
-        }
-        .btn.primary {
-          display: none;
-        }
-      }
-      main {
-        max-width: var(--max);
-        margin: 0 auto;
-        padding: 1rem 1rem 3rem;
-      }
-      .hero {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 1.2rem;
-        align-items: stretch;
-        margin: 1rem 0;
-      }
-      @media (max-width: 900px) {
-        .hero {
-          grid-template-columns: 1fr;
-          grid-template-rows: auto auto;
-        }
-        .video-box {
-          margin-top: 1rem;
-        }
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--stroke);
-        border-radius: var(--radius);
-        padding: 1rem;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
-      }
-      .pill {
-        display: inline-flex;
-        gap: 0.5rem;
-        align-items: center;
-        border: 1px solid var(--stroke);
-        border-radius: 999px;
-        padding: 0.35rem 0.6rem;
-        color: #566e64;
-        background: #fff;
-      }
-      .leds {
-        display: flex;
-        gap: 0.6rem;
-        margin: 0.4rem 0 1rem;
-        align-items: center;
-      }
-      .led {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        box-shadow: 0 0 0 2px #fff inset, 0 0 0 3px rgba(0, 0, 0, 0.04);
-      }
-      .led.red {
-        background: #ff3b30;
-      }
-      .led.green {
-        background: #12b347;
-      }
-      .video-box {
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 14px;
-        border: 1px solid var(--stroke);
-      }
-      .video-box video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 14px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1rem;
-      }
-      .img-full {
-        width: 100%;
-        max-height: 600px;
-        object-fit: cover;
-        border-radius: 16px;
-        margin-bottom: 2rem;
-      }
-      .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: stretch;
-      }
-      @media (max-width: 900px) {
-        .form-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      .form-grid .card {
-        height: 100%;
-      }
-      .form-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 16px;
-        border: 1px solid var(--stroke);
-        background: #fff;
-        padding: 10px;
-      }
-      form {
-        display: grid;
-        gap: 0.7rem;
-      }
-      input,
-      textarea {
-        border: 1px solid var(--stroke);
-        border-radius: 12px;
-        padding: 0.7rem 0.8rem;
-        width: 100%;
-      }
-      button[type="submit"] {
-        background: #12b347;
-        color: #fff;
-        padding: 0.8rem 1rem;
-        border: 0;
-        border-radius: 12px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-      footer {
-        border-top: 1px solid var(--stroke);
-        padding: 1.4rem 1rem;
-        margin-top: 2rem;
-        text-align: center;
-      }
-      footer img {
-        height: 70px;
-        margin-bottom: 0.6rem;
-      }
-      footer div {
-        color: #566e64;
-      }
-    </style>
+  :root {
+    --bg: #f6faf8;
+    --card: #fff;
+    --text: #0b1a11;
+    --muted: #566e64;
+    --brand: #12b347;
+    --stroke: #dbe7e1;
+    --max: 1100px;
+    --radius: 16px;
+  }
+
+  * ,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+      "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  a {
+    color: #0a7f35;
+    text-decoration: none;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffffaa;
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--stroke);
+  }
+
+  .nav {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .logo img {
+    height: clamp(36px, 7vw, 110px);
+  }
+
+  .menu {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .menu a {
+    color: var(--muted);
+    padding: 0.5rem 0.6rem;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .menu a:hover {
+    background: #eef6f1;
+  }
+
+  .btn {
+    background: var(--brand);
+    color: #fff;
+    padding: 0.6rem 0.9rem;
+    border-radius: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: #0a8f3f;
+    transform: scale(1.02);
+  }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* ----------------------- */
+  /*     MENU MOBILE FIX      */
+  /* ----------------------- */
+
+  @media (max-width: 900px) {
+    .menu {
+      position: absolute !important;
+      display: none !important;
+      top: 100% !important;
+      right: 1rem !important;
+      left: auto !important;
+      background: #fff;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      flex-direction: column;
+      min-width: 220px;
+      padding: 0.6rem;
+      z-index: 9999 !important;
+    }
+
+    .menu.show {
+      display: flex !important;
+    }
+
+    .hamburger {
+      display: inline-block !important;
+      margin-left: auto;
+    }
+
+    .btn.primary {
+      display: none !important;
+    }
+  }
+
+  /* ----------------------- */
+
+  main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1rem 1rem 3rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.2rem;
+    align-items: stretch;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+    .video-box {
+      margin-top: 1rem;
+    }
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .pill {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    padding: 0.35rem 0.6rem;
+    color: #566e64;
+    background: #fff;
+  }
+
+  .leds {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0.4rem 0 1rem;
+    align-items: center;
+  }
+
+  .led {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff inset, 0 0 0 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .led.red {
+    background: #ff3b30;
+  }
+
+  .led.green {
+    background: #12b347;
+  }
+
+  .video-box {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 1px solid var(--stroke);
+  }
+
+  .video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .img-full {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  @media (max-width: 900px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-grid .card {
+    height: 100%;
+  }
+
+  .form-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid var(--stroke);
+    background: #fff;
+    padding: 10px;
+  }
+
+  form {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--stroke);
+    border-radius: 12px;
+    padding: 0.7rem 0.8rem;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    background: #12b347;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* OPTIONAL */
+  #optional-contact {
+    margin-bottom: 2rem;
+  }
+
+  #optional-contact table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  #optional-contact th,
+  #optional-contact td {
+    border: 1px solid var(--stroke);
+    padding: 0.6rem;
+    text-align: left;
+  }
+
+  #optional-contact th {
+    background: #eef6f1;
+  }
+
+  #optional-contact td img {
+    max-width: 60px;
+    border-radius: 8px;
+  }
+
+  footer {
+    border-top: 1px solid var(--stroke);
+    padding: 1.4rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  footer img {
+    height: 70px;
+    margin-bottom: 0.6rem;
+  }
+
+  footer div {
+    color: #566e64;
+  }
+</style>
+
   </head>
   <body>
     <header>
@@ -325,7 +403,7 @@
     <main>
       <section class="hero">
         <div class="card">
-          <span class="pill">Sicurezza alla ribalta. Sempre.</span>
+          <span class="pill">Sicurezza alla ribalta. Sempre!</span>
           <h1>KeyCheckBox – Sistema di Sicurezza per Ribalta Camion</h1>
           <p>
             Previeni la partenza anticipata dei camion durante le operazioni di
@@ -437,7 +515,77 @@
         />
       </section>
 
+      <!-- OPTIONAL PRIMA DEL FORM -->
+      <section id="optional-contact" class="card">
+        <h2>Optional disponibili</h2>
+        <p>
+          Qui trovi i componenti opzionali installabili in aggiunta alla KCB
+          base.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Immagine</th>
+              <th>Prodotto</th>
+              <th>Codice</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="assets/semaforo-esterno.png"
+                  alt="Semaforo esterno"
+                />
+              </td>
+              <td>Semaforo esterno</td>
+              <td>KCB-OPT-001</td>
+              <td>
+                Segnalatore luminoso a LED per area ribalta (rosso/verde).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="assets/sensore-pedana.png" alt="Sensore pedana" />
+              </td>
+              <td>Sensore pedana</td>
+              <td>KCB-OPT-002</td>
+              <td>
+                Rileva la posizione della pedana di carico (aperta/chiusa).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="assets/cuneo-sensore.png" alt="Cuneo sensore" />
+              </td>
+              <td>Cuneo con sensore</td>
+              <td>KCB-OPT-004</td>
+              <td>Blocco ruota con sensore integrato.</td>
+            </tr>
+            <tr>
+              <td><img src="assets/wireless.png" alt="Wireless" /></td>
+              <td>Modulo Wireless</td>
+              <td>KCB-OPT-005</td>
+              <td>Connessione wireless (alternativa al cablaggio).</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="assets/staffa-45.png" alt="Staffa retro 45°" />
+              </td>
+              <td>Staffa retro 45°</td>
+              <td>KCB-OPT-006</td>
+              <td>Staffa inclinata per installazione a 45°.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
       <section id="contatti" class="form-grid">
+        <img
+          src="assets/frontale_kcb.png"
+          alt="Vista frontale KeyCheckBox ribalta camion"
+        />
         <div class="card">
           <h2>Prenota una demo</h2>
           <form action="https://formspree.io/f/mkgqvgdp" method="POST">
@@ -464,10 +612,7 @@
             <button type="submit">Invia richiesta</button>
           </form>
         </div>
-        <img
-          src="assets/frontale_kcb.png"
-          alt="Vista frontale KeyCheckBox ribalta camion"
-        />
+        
       </section>
     </main>
 
