@@ -371,6 +371,75 @@
   footer div {
     color: #566e64;
   }
+ /* ===============================
+   MINI CARD — LAYOUT RESPONSIVE
+   =============================== */
+
+#optional-contact table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* nascondo header tabella */
+#optional-contact thead {
+  display: none;
+}
+
+/* ogni riga = una card */
+#optional-contact tr {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* celle verticali */
+#optional-contact td {
+  display: block;
+  border: none;
+  padding: 0.4rem 0;
+}
+
+/* immagine bella centrata */
+#optional-contact td img {
+  display: block;
+  max-width: 120px;
+  margin: 0 auto 0.8rem;
+}
+
+/* labels automatiche */
+#optional-contact td:nth-child(2)::before {
+  content: "Prodotto:";
+  font-weight: 600;
+}
+#optional-contact td:nth-child(3)::before {
+  content: "Codice:";
+  font-weight: 600;
+}
+#optional-contact td:nth-child(4)::before {
+  content: "Descrizione:";
+  font-weight: 600;
+}
+
+/* Smarphone: 1 card per riga — già ok */
+
+/* Tablet & Desktop: 2 card per riga */
+@media (min-width: 600px) {
+  #optional-contact tbody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  #optional-contact tr {
+    margin: 0; /* griglia gestisce lo spacing */
+  }
+}
+
+
 </style>
 
   </head>
@@ -542,7 +611,7 @@
               <td>Semaforo esterno</td>
               <td>KCB-OPT-001</td>
               <td>
-                Segnalatore luminoso a LED per area ribalta (rosso/verde).
+                Segnalatore luminoso a LED per area ribalta esterna (rosso/verde).
               </td>
             </tr>
             <tr>
